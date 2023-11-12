@@ -2,8 +2,11 @@ package com.yonycalsin.bmicaculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import com.google.android.material.slider.RangeSlider
+import java.text.DecimalFormat
 
 enum class GenderCard {
     MALE,
@@ -14,6 +17,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var cardMale: CardView
 
     private lateinit var cardFemale: CardView
+
+    private lateinit var textHeight: TextView
+
+    private lateinit var rangeSliderHeight: RangeSlider
 
     private var selectedGenderCard: Enum<GenderCard> = GenderCard.MALE
 
@@ -33,6 +40,10 @@ class MainActivity : AppCompatActivity() {
         cardMale = findViewById(R.id.cardMale)
 
         cardFemale = findViewById(R.id.cardFemale)
+
+        textHeight = findViewById(R.id.textHeight)
+
+        rangeSliderHeight = findViewById(R.id.rangeSliderHeight)
     }
 
     private fun initListeners() {
@@ -46,6 +57,13 @@ class MainActivity : AppCompatActivity() {
             selectedGenderCard = GenderCard.FEMALE
 
             setCardBackgroundColor()
+        }
+
+        rangeSliderHeight.addOnChangeListener { _, value, _ ->
+
+            val result = DecimalFormat("#.##").format(value)
+
+            textHeight.text = "$result cm"
         }
     }
 
