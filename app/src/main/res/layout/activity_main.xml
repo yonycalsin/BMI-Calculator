@@ -107,10 +107,10 @@
                 android:id="@+id/textHeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="120 cm"
                 android:textColor="@color/white"
                 android:textSize="38sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:text="120 cm" />
 
             <com.google.android.material.slider.RangeSlider
                 android:id="@+id/rangeSliderHeight"
@@ -261,8 +261,23 @@
         android:id="@+id/btnCalculate"
         android:layout_width="0dp"
         android:layout_height="80dp"
+        android:layout_marginTop="32dp"
         android:text="@string/calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewAgeCard" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/created_by"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textSize="16sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalculate" />
 </androidx.constraintlayout.widget.ConstraintLayout>

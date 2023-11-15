@@ -22,6 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/viewIMCard"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginVertical="32dp"
@@ -74,9 +75,24 @@
         android:id="@+id/btnRecalculate"
         android:layout_width="0dp"
         android:layout_height="80dp"
+        android:layout_marginTop="32dp"
         android:text="@string/recalculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewIMCard" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/created_by"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textSize="16sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRecalculate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
