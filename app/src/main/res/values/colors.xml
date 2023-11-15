@@ -13,4 +13,5 @@
     <color name="card_background_selected">#FF111328</color>
     <color name="button_background">#EB1555</color>
     <color name="text">#FF8D8E98</color>
+    <color name="primary">#FF6200EE</color>
 </resources>
