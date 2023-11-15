@@ -6,4 +6,20 @@
     <string name="weight">Weight</string>
     <string name="age">Age</string>
     <string name="calculate">Calculate</string>
+    <string name="result">Result</string>
+    <string name="recalculate">Recalculate</string>
+
+    <string name="invalid">Invalid</string>
+
+    <string name="imc_status_low_weight">Low weight</string>
+    <string name="imc_info_low_weight">You are underweight.</string>
+
+    <string name="imc_status_normal_weight">Normal weight</string>
+    <string name="imc_info_normal_weight">You are at a healthy weight.</string>
+
+    <string name="imc_status_over_weight">Overweight</string>
+    <string name="imc_info_over_weight">You are carrying some extra weight.</string>
+
+    <string name="imc_status_obesity_weight">Obesity</string>
+    <string name="imc_info_obesity_weight">You are in the obesity range.</string>
 </resources>

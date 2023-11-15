@@ -1,5 +1,6 @@
 package com.yonycalsin.bmicaculator
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -46,6 +47,10 @@ class MainActivity : AppCompatActivity() {
     private var currentWeight: Int = 70
 
     private var currentAge: Int = 30
+
+    companion object {
+        const val IMC_RESULT_EXTRA_KEY = "IMC_RESULT"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -127,7 +132,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnCalculate.setOnClickListener {
-            calculateBMI()
+            navigateToResult(calculateBMI())
         }
     }
 
@@ -168,13 +173,21 @@ class MainActivity : AppCompatActivity() {
         textViewAge.text = currentAge.toString()
     }
 
-    private fun calculateBMI() {
+
+    private fun navigateToResult(result: Double) {
+        val intent = Intent(this, ResultActivity::class.java)
+
+        intent.putExtra(IMC_RESULT_EXTRA_KEY, result)
+
+        startActivity(intent)
+    }
+    private fun calculateBMI(): Double {
         val bmi = currentWeight / ((currentHeight.toDouble() / 100) * (currentHeight.toDouble() / 100))
 
         val df = DecimalFormat("#.##")
 
         val result = df.format(bmi).toDouble()
 
-        Log.i("bmi", "result $bmi")
+        return result
     }
 }
